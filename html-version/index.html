@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="scripts/util.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <title>Market Madness</title>
+    </head>
+    <body>
+        <div id="root">
+            <div id="mkt-settings">
+                <form id="mkt-settings-form" action="">
+                    <div>
+                        <p>Select market type</p>
+                        <label>Standard</label>
+                        <input type="radio" name="variant" value="standard" checked>
+
+                        <label>Food</label>
+                        <input type="radio" name="variant" value="food">
+                    </div>
+
+                    <div>
+                        <p>Select market theme</p>
+                        <label>Day</label>
+                        <input type="radio" name="theme" value="day" checked>
+
+                        <label>Night</label>
+                        <input type="radio" name="theme" value="night">
+                    </div>
+
+                    <div>
+                        <p>Select game mode</p>
+                        <label>Standard</label>
+                        <input type="radio" name="mode" value="standard" checked>
+
+                        <label>Night</label>
+                        <input type="radio" name="mode" value="night">
+                        
+                        <label>Rush</label>
+                        <input type="radio" name="mode" value="rush">
+                    </div>
+                </form>
+                <button type="button" onclick="test()">Set My Settings!</button>
+            </div>
+            <div id="mkt-game">
+                <div id="mkt-game-bg"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+:root {
+    /* Day theme colors */
+    --day-blue: rgb(108, 189, 255);
+    --day-stall-light: rgb(41, 41, 41);
+    --day-shrubbery-1: rgb(0, 94, 0);
+    --day-shrubbery-2: rgb(0, 160, 21);
+
+    /* Night theme colors */
+    --night-blue: rgb(12, 0, 34);
+    --night-stall-light: rgb(255, 217, 0);
+    --night-shrubbery-1: rgb(153, 0, 102);
+    --night-shrubbery-2: rgb(111, 0, 155);
+}
