@@ -11,6 +11,21 @@ I'm providing two different builds for this website in this repository:
 
 However, for the workshop, I will not be demonstrating the React App so if you would like to, you can try out the React tutorial on your own.
 
+### File Structure
+- `react-version/*` - The React code for this project. May be empty, may not be. It is implemented using Typescript, a library of Javascript that contains explicit type declarations, much like languages like Java or C++.
+
+- `html-version/*` - The HTML/CSS/JS directory containing all of the code for this project that we will build. To run this site, load `index.html` in your browser of choice.
+
+### Files you will edit
+- `index.html`
+- `index.css`
+- `scripts/index.js`
+
+### Files you should read for reference
+Some of this syntax may be confusing as these files contain utility functions I wrote.
+- `scripts/market.js`
+- `scripts/util.js`
+
 ## Workshop Agenda
 - Introduction (5 min)
     - Who am I?
