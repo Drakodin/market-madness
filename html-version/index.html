@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script type="text/javascript" src="scripts/util.js"></script>
+        <script type="text/javascript" src="scripts/market.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
         <link rel="stylesheet" href="index.css">
         <title>Market Madness</title>
@@ -41,10 +42,19 @@
                         <input type="radio" name="mode" value="rush">
                     </div>
                 </form>
-                <button type="button" onclick="test()">Set My Settings!</button>
+                <button type="button" onclick="setGameSettings()">Set My Settings!</button>
             </div>
             <div id="mkt-game">
-                <div id="mkt-game-bg"></div>
+                <div id="mkt-game-bg">
+                    <!--
+                    <svg width="150px" height="75px" style="margin: 20px;">
+                        <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg>
+                        <path class="mkt-stall-lightpost" d="M 0 37 L 11 37 A 1 1 0 0 0 10 36 A 1 1 0 0 0 9 35 A 1 1 0 0 0 8 34 C 6 29 6 19 7 10 M 7 10 A 1 1 0 0 0 8 10 L 9 8 L 9 6 L 8 4 C 7 2 4 2 3 4 L 2 6 L 2 8 L 3 10 A 1 1 0 0 0 4 10 C 5 19 5 29 3 34 A 1 1 0 0 0 2 35 A 1 1 0 0 0 1 36 A 1 1 0 0 0 0 37"/>
+                    </svg>
+                    -->
+                </div>
             </div>
         </div>
     </body>

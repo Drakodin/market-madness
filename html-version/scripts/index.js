@@ -50,3 +50,18 @@ function startGame() {
     // In fact, this entire function will be empty
     startTimer();
 }
+
+/**
+ * Implement the body of this function
+ * 
+ * Sends a trade request to the trader. The cost input should always be
+ * less than or equal to the amount requested. There is a base rejection
+ * rate in the code for you.
+ * 
+ * @param {Entity} vendor One of the three defined street vendors on the page.
+ * @param {string} item The item's name in which to purchase from the vendor.
+ * @param {number} offer The amount of money offered to pay for the item.
+ */
+function makeTransaction(vendor, item, offer) {
+
+}

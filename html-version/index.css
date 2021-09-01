@@ -11,3 +11,12 @@
     --night-shrubbery-1: rgb(153, 0, 102);
     --night-shrubbery-2: rgb(111, 0, 155);
 }
+
+.mkt-shrub-1 {
+    transform: scale(3.0);
+    fill: var(--day-shrubbery-1);
+}
+.mkt-stall-lightpost {
+    fill: #111111;
+    transform: scale(3.0);
+}

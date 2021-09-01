@@ -89,3 +89,51 @@ function startTimer() {
         }, 1000);
     }
 }
+
+/**
+ * Calls a function n times. Stores the result of the executions
+ * in a list. 
+ * @param {(any) => any} method The function to call
+ * @param {number} n Number of times to call the function
+ */
+function repeat(method, n) {
+    let results = [];
+    for (let i = 0; i < n; i++) {
+        results.push(method());
+    }
+    return results;
+}
+
+class Inventory {
+    constructor() {
+        this.content = [];
+    }
+    get items() {
+        return this.content;
+    }
+
+    set items(content) {
+        this.content = content;
+    }
+
+    add(...products) {
+        this.content.push(...products);
+    }
+
+    remove(product) {
+        this.content = this.content.filter(v => v !== product);
+    }
+}
+
+class Entity {
+    constructor(name, role) {
+        this.name = name;
+        this.role = role;
+
+        this.inventory = new Inventory();
+    }
+
+    getInventory() {
+        return this.inventory;
+    }
+}
