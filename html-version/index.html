@@ -11,38 +11,41 @@
     <body>
         <div id="root">
             <div id="mkt-settings">
-                <form id="mkt-settings-form" action="">
-                    <div>
-                        <p>Select market type</p>
-                        <label>Standard</label>
-                        <input type="radio" name="variant" value="standard" checked>
-
-                        <label>Food</label>
-                        <input type="radio" name="variant" value="food">
-                    </div>
-
-                    <div>
-                        <p>Select market theme</p>
-                        <label>Day</label>
-                        <input type="radio" name="theme" value="day" checked>
-
-                        <label>Night</label>
-                        <input type="radio" name="theme" value="night">
-                    </div>
-
-                    <div>
-                        <p>Select game mode</p>
-                        <label>Standard</label>
-                        <input type="radio" name="mode" value="standard" checked>
-
-                        <label>Night</label>
-                        <input type="radio" name="mode" value="night">
-                        
-                        <label>Rush</label>
-                        <input type="radio" name="mode" value="rush">
-                    </div>
-                </form>
-                <button type="button" onclick="setGameSettings()">Set My Settings!</button>
+                <!-- Build the form -->
+                <div class="mkt-settings-modal">
+                    <form id="mkt-settings-form" action="">
+                        <div>
+                            <p>Select market type</p>
+                            <label>Standard</label>
+                            <input type="radio" name="variant" value="standard" checked>
+    
+                            <label>Food</label>
+                            <input type="radio" name="variant" value="food">
+                        </div>
+    
+                        <div>
+                            <p>Select market theme</p>
+                            <label>Day</label>
+                            <input type="radio" name="theme" value="day" checked>
+    
+                            <label>Night</label>
+                            <input type="radio" name="theme" value="night">
+                        </div>
+    
+                        <div>
+                            <p>Select game mode</p>
+                            <label>Standard</label>
+                            <input type="radio" name="mode" value="standard" checked>
+    
+                            <label>Night</label>
+                            <input type="radio" name="mode" value="night">
+                            
+                            <label>Rush</label>
+                            <input type="radio" name="mode" value="rush">
+                        </div>
+                    </form>
+                    <button type="button" onclick="setGameSettings()">Set My Settings!</button>
+                </div>
             </div>
             <div id="mkt-game">
                 <div id="mkt-game-bg">

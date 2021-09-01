@@ -17,7 +17,7 @@ let vendors = [
 ]
 
 // This is the player object
-let player = new Entity('Player', 'player');
+let player = new Player('Player', 'player');
 
 // Feel free to change these
 const STANDARD_CONTENT_0 = [

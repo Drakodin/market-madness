@@ -121,7 +121,7 @@ class Inventory {
     }
 
     remove(product) {
-        this.content = this.content.filter(v => v !== product);
+        this.content.splice(this.content.indexOf(product), 1);
     }
 }
 
@@ -135,5 +135,21 @@ class Entity {
 
     getInventory() {
         return this.inventory;
+    }
+}
+
+class Player extends Entity {
+    constructor(name, role) {
+        super(name, role);
+
+        this.balance = 0;
+    }
+
+    get currentBalance() {
+        return this.balance;
+    }
+
+    set currentBalance(balance) {
+        this.balance = balance;
     }
 }

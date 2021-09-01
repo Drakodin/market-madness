@@ -55,13 +55,33 @@ function startGame() {
  * Implement the body of this function
  * 
  * Sends a trade request to the trader. The cost input should always be
- * less than or equal to the amount requested. There is a base rejection
- * rate in the code for you.
+ * less than or equal to the amount requested.
+ * 
+ * There is always a 5% chance the transaction will be rejected by the vendor.
+ * This chance grows linearly according to the distance from the original price.
+ * 
+ * For example, if something costs $10 and the payment is $10, there is a 0% chance
+ * of rejection, however the difference rises by 5% per 5% of the cost attempting
+ * to reduce. That means attempting to get something for free is impossible.
  * 
  * @param {Entity} vendor One of the three defined street vendors on the page.
  * @param {string} item The item's name in which to purchase from the vendor.
+ * @param {number} cost The item's initial cost.
  * @param {number} offer The amount of money offered to pay for the item.
+ * 
+ * @returns {{status: "success" | "failure", reason?: string}}
  */
-function makeTransaction(vendor, item, offer) {
+function makeTransaction(vendor, item, cost, offer) {
+    let reject = (cost - offer) * 100 * REJECT_RATE;
+    let action = Math.random();
 
+    if (action > reject) {
+        player.getInventory().add(item);
+        vendor.getInventory().remove(item);
+
+        player.currentBalance = player.currentBalance - offer;
+        return {status: "success"};
+    } else {
+        return {status: "failure", reason: "Transaction rejected by vendor."}
+    }
 }
