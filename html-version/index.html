@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div id="mkt-game">
-                <div id="mkt-game-bg">
+                <div id="mkt-theme-provider">
                     <!--
                     <svg width="150px" height="75px" style="margin: 20px;">
                         <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
@@ -57,8 +57,27 @@
                         <path class="mkt-stall-lightpost" d="M 0 37 L 11 37 A 1 1 0 0 0 10 36 A 1 1 0 0 0 9 35 A 1 1 0 0 0 8 34 C 6 29 6 19 7 10 M 7 10 A 1 1 0 0 0 8 10 L 9 8 L 9 6 L 8 4 C 7 2 4 2 3 4 L 2 6 L 2 8 L 3 10 A 1 1 0 0 0 4 10 C 5 19 5 29 3 34 A 1 1 0 0 0 2 35 A 1 1 0 0 0 1 36 A 1 1 0 0 0 0 37"/>
                     </svg>
                     -->
+                    <svg class="mkt-bg-skybox">
+                        <rect id="sky" width="100%" height="100%" class="mkt-bg-sky"></rect>
+                    </svg>
+                    <svg class="mkt-bg-pathbox">
+                        <rect width="100%" height="100%" class="mkt-bg-path"></rect>
+                    </svg>
+                    <svg width="150px" height="75px">
+                        <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg>
+                        <path class="mkt-stall-light" d="M 6 13 C 7 16 11 16 12 13 C 13 10 10 9 9 4 C 8 9 5 10 6 13"/>
+                    </svg>
+                    <button onclick="toggle()">Toggle Theme</button>
                 </div>
             </div>
+            <!-- Timer and currency components. Do not edit. -->
+            <div id="mkt-timer">
+            </div>
+            <div id="mkt-currency">
+            </div>
         </div>
+        <button onclick="startTimer()">Start Timer (Test)</button>
     </body>
 </html>

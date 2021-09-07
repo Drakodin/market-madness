@@ -10,7 +10,7 @@ const REJECT_RATE = 0.05;
 
 // The marketplace will have 3 different modes which will activate different settings
 const MARKET_SETTINGS = {
-    variants: {
+    variant: {
         standard: 1,
         food: 1.2,
         barter: 0.6
@@ -62,13 +62,13 @@ function updateGameUI() {
     let currency = document.getElementById('mkt-currency');
     
     // Set timer in the top left
-    timer.innerHTML = `${STANDARD_TIME * parseFloat(sessionStorage.getItem("mode"))}`;
+    timer.innerHTML = `${STANDARD_TIME * parseFloat(MARKET_SETTINGS.mode[sessionStorage.getItem("mode")])}`;
 
     // Set currency amount in the top right
-    currency.innerHTML = `${STANDARD_CURRENCY
-        * MARKET_SETTINGS[sessionStorage.getItem('theme')]
-        * parseInt(sessionStorage.getItem('variant'))
-        * parseInt(sessionStorage.getItem('mode'))
+    currency.innerHTML = `$${STANDARD_CURRENCY
+        * MARKET_SETTINGS.theme[(sessionStorage.getItem('theme') === "day") ? "standard" : "night"]
+        * MARKET_SETTINGS.variant[sessionStorage.getItem('variant')]
+        * MARKET_SETTINGS.mode[sessionStorage.getItem('mode')]
     }`;
 
     // Set elements in the theme provider to the appropriate theme
@@ -81,13 +81,19 @@ function updateGameUI() {
 /**
  * Starts the game timer
  */
+let timer;
 function startTimer() {
+    timer = setInterval(tick, 1000);
+}
+
+function tick() {
     let timer = document.getElementById("mkt-timer");
-    while (parseInt(timer.innerHTML) > 0) {
-        setTimeout(() => {
-            timer.innerHTML = `${parseInt(timer.innerHTML) - 1}`;
-        }, 1000);
+    let currTime = parseInt(timer.innerHTML);
+    if (currTime === 0) {
+        clearInterval();
+        return;
     }
+    timer.innerHTML = currTime - 1;
 }
 
 /**

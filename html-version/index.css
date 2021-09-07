@@ -7,20 +7,17 @@
     --day-shrubbery-2: rgb(0, 160, 21);
 
     /* Night theme colors */
-    --night-blue: rgb(12, 0, 34);
+    --night-blue: rgb(22, 0, 63);
     --night-stall-light: rgb(255, 217, 0);
     --night-shrubbery-1: rgb(153, 0, 102);
     --night-shrubbery-2: rgb(111, 0, 155);
 }
 
-#root {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #mkt-settings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
     margin: auto;
     text-align: center;
 }
@@ -29,11 +26,80 @@
     padding: 20px;
 }
 
+/* SVG Manipulation */
+
 .mkt-shrub-1 {
     transform: scale(3.0);
     fill: var(--day-shrubbery-1);
 }
+
+.mkt-shrub-1-night {
+    transform: scale(3.0);
+    fill: var(--night-shrubbery-1);
+}
 .mkt-stall-lightpost {
     fill: #111111;
     transform: scale(3.0);
+}
+
+.mkt-stall-light {
+    fill: var(--day-stall-light);
+    transform: scale(3.0);
+}
+
+.mkt-stall-light-night {
+    fill: var(--night-stall-light);
+    transform: scale(3.0);
+}
+
+.mkt-bg-skybox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: -2;
+}
+
+.mkt-bg-sky {
+    fill: var(--day-blue);
+}
+
+.mkt-bg-sky-night {
+    fill: var(--night-blue);
+}
+
+.mkt-bg-pathbox {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: 70%;
+    left: 0;
+    z-index: -2;
+}
+
+.mkt-bg-path {
+    fill: rgb(0, 68, 36);
+}
+
+#mkt-timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid black 2px;
+    background: #ddd;
+    width: max(5%, 50px);
+    font: 24px sans-serif;
+    z-index: 1000;
+}
+
+#mkt-currency {
+    position: absolute;
+    top: 0;
+    left: calc(100% - max(5%, 50px) - 4px);
+    border: solid black 2px;
+    background: #ddd;
+    width: max(5%, 50px);
+    font: 24px sans-serif;
+    z-index: 1000;
 }

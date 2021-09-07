@@ -85,3 +85,26 @@ function makeTransaction(vendor, item, cost, offer) {
         return {status: "failure", reason: "Transaction rejected by vendor."}
     }
 }
+
+function toggle() {
+    let paths = document.querySelectorAll('path');
+    let sky = document.getElementById('sky');
+    paths.forEach(v => {
+        // These paths only have one class
+        v.classList.forEach(name => {
+            if (name.includes('night')) {
+                v.classList.replace(name, `${name.substring(0, name.indexOf('-night'))}`);
+            } else {
+                v.classList.replace(name, `${name}-night`);
+            }
+        })
+    });
+
+    sky.classList.forEach(name => {
+        if (name.includes('night')) {
+            sky.classList.replace(name, `${name.substring(0, name.indexOf('-night'))}`);
+        } else {
+            sky.classList.replace(name, `${name}-night`);
+        }
+    })
+}
