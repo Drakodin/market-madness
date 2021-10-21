@@ -1,0 +1,114 @@
+#svg-brush-1 {
+    position: absolute;
+    top: 61%;
+    z-index: -2;
+}
+
+#svg-brush-2 {
+    position: absolute;
+    top: 60%;
+    transform: scale(1.4);
+    left: 20%;
+    z-index: -2;
+}
+
+#svg-brush-3 {
+    position: absolute;
+    top: 60%;
+    transform: scale(1.4);
+    left: 68%;
+    z-index: -2;
+}
+
+#svg-brush-4 {
+    position: absolute;
+    top: 61%;
+    left: 88%;
+    z-index: -2;
+}
+
+#svg-brush-5 {
+    position: absolute;
+    top: 60%;
+    left: 9.5%;
+    transform: scale(1.2);
+    z-index: -2;
+}
+
+#svg-brush-6 {
+    position: absolute;
+    top: 60%;
+    left: 79%;
+    transform: scale(1.2);
+    z-index: -2;
+}
+
+#svg-light-1 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: scale(2) translate(-25%);
+    z-index: -2;
+}
+
+/* SVG Manipulation */
+
+.mkt-shrub-1 {
+    transform: scale(3.0);
+    fill: var(--day-shrubbery-1);
+}
+
+.mkt-shrub-1-night {
+    transform: scale(3.0);
+    fill: var(--night-shrubbery-1);
+}
+
+.mkt-shrub-2 {
+    fill: var(--day-shrubbery-2);
+    transform: scale(3.0);
+}
+
+.mkt-shrub-2-night {
+    fill: var(--night-shrubbery-2);
+    transform: scale(3.0);
+}
+
+.mkt-stall-light {
+    fill: var(--day-stall-light);
+    transform: scale(3.0);
+}
+
+.mkt-stall-light-night {
+    fill: var(--night-stall-light);
+    transform: scale(3.0);
+}
+
+.mkt-bg-skybox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: -2;
+}
+
+.mkt-bg-sky {
+    fill: var(--day-blue);
+}
+
+.mkt-bg-sky-night {
+    fill: var(--night-blue);
+}
+
+.mkt-bg-pathbox {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: 70%;
+    left: 0;
+    z-index: -2;
+}
+
+.mkt-bg-path {
+    fill: rgb(0, 68, 36);
+}

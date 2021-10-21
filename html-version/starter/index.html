@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="./styles/theme.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <title>Market Madness</title>
+    </head>
+    <body>
+        <div id="root">
+            <div id="mkt-settings">
+                <!-- Build the form -->
+                <div class="mkt-settings-modal">
+                    <div id="mkt-settings-options">
+                        <form id="mkt-settings-form" action="">
+                            <div>
+                                <p>Select market type</p>
+                                <div>
+                                    <label>Standard</label>
+                                    <input type="radio" name="variant" value="standard" checked>
+                                </div>
+                                <div>
+                                    <label>Barter</label>
+                                    <input type="radio" name="variant" value="barter">
+                                </div>
+                            </div>
+        
+                            <div>
+                                <p>Select market theme</p>
+                                <div>
+                                    <label>Day</label>
+                                    <input type="radio" name="theme" value="day" checked>
+                                </div>
+                                <div>
+                                    <label>Night</label>
+                                    <input type="radio" name="theme" value="night">
+                                </div>
+                            </div>
+        
+                            <div>
+                                <p>Select game mode</p>
+                                <div>
+                                    <label>Standard</label>
+                                    <input type="radio" name="mode" value="standard" checked>
+                                </div>
+                                <div>
+                                    <label>Night</label>
+                                    <input type="radio" name="mode" value="night">
+                                </div>
+                                
+                                <div>
+                                    <label>Rush</label>
+                                    <input type="radio" name="mode" value="rush">
+                                </div>
+                            </div>
+                        </form>
+                        <button type="button" onclick="setGameSettings()">Set My Settings!</button>
+                    </div>
+                    <div id="mkt-settings-play">
+                        <h1>Market Madness</h1>
+                        <button type="button" onclick="startGame()">Play!</button>
+                        <button type="button" onclick="showSettings(true)">Settings</button>
+                    </div>
+                </div>
+            </div>
+            <div id="mkt-game">
+                <div id="mkt-theme-provider">
+                    <svg class="mkt-bg-skybox">
+                        <rect id="sky" width="100%" height="100%" class="mkt-bg-sky"></rect>
+                    </svg>
+                    <svg class="mkt-bg-pathbox">
+                        <rect width="100%" height="100%" class="mkt-bg-path"></rect>
+                    </svg>
+                    <!-- 
+                        These are individual SVGs that I drew myself :D
+                    -->
+                    <svg id="svg-brush-1" width="135px" height="75px">
+                        <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg id="svg-brush-2" width="135px" height="75px">
+                        <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg id="svg-brush-3" width="135px" height="75px">
+                        <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg id="svg-brush-4" width="135px" height="75px">
+                        <path class="mkt-shrub-1" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg id="svg-brush-5" width="135px" height="75px">
+                        <path class="mkt-shrub-2" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg id="svg-brush-6" width="135px" height="75px">
+                        <path class="mkt-shrub-2" d="M 10 22 L 41 22 C 46 20 43 14 39 16 C 40 9 29 3 25 11 C 21 6 14 11 16 15 C 10 13 6 19 10 22"/>
+                    </svg>
+                    <svg id="svg-light-1" width="60px" height="68px">
+                        <path class="mkt-stall-light" d="M 6 13 C 7 16 11 16 12 13 C 13 10 10 9 9 4 C 8 9 5 10 6 13"/>
+                    </svg>
+                </div>
+                <div id="mkt-stall-wrapper">
+                    <img class="mkt-stall" src="./assets/market_stall.png" onclick="shopWith('Bek')"/>
+                    <img class="mkt-stall" src="./assets/market_stall.png" onclick="shopWith('Stephen')"/>
+                    <img class="mkt-stall" src="./assets/market_stall.png" onclick="shopWith('Talia')"/>
+                </div>
+            </div>
+            <div id="mkt-interact-backdrop">
+                <div id="mkt-interact-modal">
+                    <i class='fa fa-times modal-close' onclick="closeShop()"></i>
+                    <ul id="mkt-inventory"></ul>
+                </div>
+            </div>
+            <div id="mkt-endscreen">
+                <h2>Market Closed!</h2>
+                <h4>Items Bought</h4>
+                <!-- This will be populated, don't write anything in it -->
+                <div id="mkt-player-inventory">
+                </div>
+                <button onclick="playAgain()">Play Again!</button>
+            </div>
+            <!-- Timer and currency components. Do not edit. -->
+            <div id="mkt-timer">
+            </div>
+            <div id="mkt-currency">
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="scripts/util.js"></script>
+    <script type="text/javascript" src="scripts/market.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</html>
