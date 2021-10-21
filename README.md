@@ -3,6 +3,18 @@ This is the codebase for HackGT 8's Emerging Web Development workshop. Participa
 
 All code is provided by myself as a representative of GT Web Developers (GT WebDev)
 
+## Instructions
+This project is technically incomplete. Thus, you are free to modify it all you want! (though I would suggest not to use it as a final submission!) If you attended HackGTeeny, then the instructions are almost the same. In this case, there are more options.
+
+### Cloning
+Make sure you have Git installed before using this option. Click on the "Code" dropdown and copy the link. Next, open a terminal in the directory you would like this repository to be downloaded into. Type the command `git clone <link>` and press enter.
+
+### Forking
+If you have a Github account, you could also fork this repository. Forking (designated by the branching tree icon) creates a copy of this repository in your own account and you are free to play with it as much as you want and even push changes of your own. This was previously not possible if you cloned this repository (and you shouldn't either). Also, if you don't like the name, you can always change it :)
+
+### Downloading the zip
+There is a release available with an older version of this README, but has up to date code. You could also click on the "Code" drop down and choose to download the zip from there. These don't have the `.git` folder and thus do not have the ability to commit.
+
 ## What are we building?
 This is Market Madness, a simple browser game built with little to no external libraries. The entire functionality is handled with vanilla Javascript which makes up well over half of all of the code in this repository.
 
