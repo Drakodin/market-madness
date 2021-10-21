@@ -4,7 +4,7 @@ This is the codebase for HackGT8's Emerging Web Development workshop. Participan
 All code is provided by myself as a representative of GT Web Developers (GT WebDev)
 
 ## What are we building?
-This is Market Madness, a simple browser game built with little to no external libraries. The entire functionality is handled with vanilla Javascript.
+This is Market Madness, a simple browser game built with little to no external libraries. The entire functionality is handled with vanilla Javascript which makes up well over half of all of the code in this repository.
 
 ## File Structure
 `completed` - The completed version of the code
