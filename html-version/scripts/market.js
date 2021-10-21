@@ -53,41 +53,35 @@ const STANDARD_CONTENT_2 = [
     'Beemo Sticker'
 ]
 
-const FOOD = [
-    'Corn',
-    'Corndog',
-    'Popcorn',
-    'Hotdog',
-    'Burger',
-    'Sushi Burrito',
-    'Eggrolls',
-    'Potstickers',
-    'Radish Cakes',
-    'Gyro',
-    'Falafel',
-    'Tandyr Nan',
-    'Beshbarmak',
-    'Black Pepper Bun',
-    'Pulled Pork',
-    'Mini Tacos',
-    'Egg Flowers',
-];
-
 switch (sessionStorage.getItem('variant')) {
     case "standard": {
-        vendors[0].inventory.content = STANDARD_CONTENT_0;
-        vendors[1].inventory.content = STANDARD_CONTENT_1;
-        vendors[2].inventory.content = STANDARD_CONTENT_2;
-        break;
-    };
-    case "food": {
-        vendors.forEach(v => {
-            let randomNums = repeat(Math.random, 6).map(v => v * FOOD.length);
-            v.inventory.content = [...randomNums.map(v => FOOD[v])];
-        });
+        vendors[0].setInventory([...STANDARD_CONTENT_0]);
+        vendors[1].setInventory([...STANDARD_CONTENT_1]);
+        vendors[2].setInventory([...STANDARD_CONTENT_2]);
         break;
     };
     default: {
         break;
     }
 }
+
+const indexedPrice = {
+    'Bek': [3, 3, 3, 30, 30, 10, 10, 50],
+    'Stephen': [5, 5, 10, 10, 10, 15, 15, 80],
+    'Talia': [6, 6, 8, 8, 8, 10, 10, 200]
+}
+
+function hideStalls() {
+    let wrapper = document.getElementById("mkt-stall-wrapper");
+    wrapper.style.display = "none";
+}
+
+hideStalls();
+
+// Load default
+function loadDefault() {
+    vendors[0].setInventory([...STANDARD_CONTENT_0]);
+    vendors[1].setInventory([...STANDARD_CONTENT_1]);
+    vendors[2].setInventory([...STANDARD_CONTENT_2]);
+}
+loadDefault();

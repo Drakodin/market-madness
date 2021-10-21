@@ -12,7 +12,6 @@ const REJECT_RATE = 0.05;
 const MARKET_SETTINGS = {
     variant: {
         standard: 1,
-        food: 1.2,
         barter: 0.6
     },
     theme: {
@@ -79,24 +78,6 @@ function updateGameUI() {
 }
 
 /**
- * Starts the game timer
- */
-let timer;
-function startTimer() {
-    timer = setInterval(tick, 1000);
-}
-
-function tick() {
-    let timer = document.getElementById("mkt-timer");
-    let currTime = parseInt(timer.innerHTML);
-    if (currTime === 0) {
-        clearInterval();
-        return;
-    }
-    timer.innerHTML = currTime - 1;
-}
-
-/**
  * Calls a function n times. Stores the result of the executions
  * in a list. 
  * @param {(any) => any} method The function to call
@@ -141,6 +122,14 @@ class Entity {
 
     getInventory() {
         return this.inventory;
+    }
+
+    /**
+     * Sets the inventory of the Entity
+     * @param {any[]} inventory 
+     */
+    setInventory(inventory) {  
+        this.inventory.items = inventory;
     }
 }
 

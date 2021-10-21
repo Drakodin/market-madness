@@ -13,6 +13,10 @@
     --night-shrubbery-2: rgb(111, 0, 155);
 }
 
+html, body {
+    overflow: hidden;
+}
+
 #mkt-settings {
     position: absolute;
     top: 50%;
@@ -20,66 +24,28 @@
     transform: translate(-50%, -60%);
     margin: auto;
     text-align: center;
+    width: 30%;
+}
+
+#mkt-settings-form {
+    margin-bottom: 10px;
+}
+
+#mkt-settings-form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#mkt-settings-form > div > div {
+    display: grid;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .mkt-settings-modal{
     padding: 20px;
-}
-
-/* SVG Manipulation */
-
-.mkt-shrub-1 {
-    transform: scale(3.0);
-    fill: var(--day-shrubbery-1);
-}
-
-.mkt-shrub-1-night {
-    transform: scale(3.0);
-    fill: var(--night-shrubbery-1);
-}
-.mkt-stall-lightpost {
-    fill: #111111;
-    transform: scale(3.0);
-}
-
-.mkt-stall-light {
-    fill: var(--day-stall-light);
-    transform: scale(3.0);
-}
-
-.mkt-stall-light-night {
-    fill: var(--night-stall-light);
-    transform: scale(3.0);
-}
-
-.mkt-bg-skybox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70%;
-    z-index: -2;
-}
-
-.mkt-bg-sky {
-    fill: var(--day-blue);
-}
-
-.mkt-bg-sky-night {
-    fill: var(--night-blue);
-}
-
-.mkt-bg-pathbox {
-    position: absolute;
-    width: 100%;
-    height: 30%;
-    top: 70%;
-    left: 0;
-    z-index: -2;
-}
-
-.mkt-bg-path {
-    fill: rgb(0, 68, 36);
+    background-color: rgba(255, 255, 255, 0.70);
+    border-radius: 10%;
 }
 
 #mkt-timer {
@@ -99,7 +65,108 @@
     left: calc(100% - max(5%, 50px) - 4px);
     border: solid black 2px;
     background: #ddd;
-    width: max(5%, 50px);
+    width: max(5%, 54px);
     font: 24px sans-serif;
     z-index: 1000;
+}
+
+#mkt-settings-play {
+    flex-direction: column;
+}
+
+#mkt-stall-wrapper {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: -1;
+}
+
+.mkt-stall {
+    transition: 0.5s ease-in-out;
+    width: 22.5%;
+    height: auto;
+    object-fit: cover;
+}
+
+.mkt-stall:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#mkt-interact-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(141, 141, 141, 0.25);
+    z-index: 2;
+    display: none;
+}
+
+#mkt-interact-modal {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.70);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    z-index: 4;
+}
+
+#mkt-inventory {
+    padding: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: 0.25s ease-in-out;
+}
+
+.modal-close:hover {
+    transform: rotateZ(45deg);
+    cursor: pointer;
+}
+
+#mkt-inventory > li {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 0.75fr;
+    text-align: left;
+    width: 100%;
+}
+
+#mkt-endscreen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.70);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#mkt-player-inventory {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 3ch;
+    padding: 5px;
+}
+
+#mkt-endscreen > h2, h4 {
+    margin-bottom: 5px;
 }
