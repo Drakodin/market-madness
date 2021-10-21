@@ -1,5 +1,5 @@
 # Market Madness
-This is the codebase for HackGT8's Emerging Web Development workshop. Participants will learn ES6+ Javascript (JS) in which they will use to implement 5 key functions that make up the functionality of the project. If any participants were present for HackGTeeny 2021, this project is much different. Due to time constraints, HTML and CSS will be covered very lightly while Javascript will make up the majority of the workshop.
+This is the codebase for HackGT 8's Emerging Web Development workshop. Participants will learn ES6+ Javascript (JS) in which they will use to implement 5 key functions that make up the functionality of the project. If any participants were present for HackGTeeny 2021, this project is much different. Due to time constraints, HTML and CSS will be covered very lightly while Javascript will make up the majority of the workshop.
 
 All code is provided by myself as a representative of GT Web Developers (GT WebDev)
 
