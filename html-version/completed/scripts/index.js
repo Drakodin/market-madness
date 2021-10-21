@@ -182,14 +182,14 @@ function fadeToWhite(text, base, rounds = 10) {
 }
 
 /**
+ * Implement the body of this function.
+ * 
  * Sets the theme of game based on the form input.
  * 
  * Called when settings are to be updated. There are two
  * possible parameters: standard | night
  * @param {string} theme The theme of the game, either one in the daytime or nighttime
  * 
- * // IMPLEMENT THIS
- * // Look at toggle() for reference
  */
 function setTheme(theme) {
     let paths = document.querySelectorAll('path');
