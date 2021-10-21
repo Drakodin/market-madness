@@ -4,6 +4,11 @@ Functionality of this game will include the following
 - Set up before starting
 - Start the game
 - Market interactions
+
+Helper functions and details for each of the functions
+can be found in the following files:
+- scripts/util.js
+- scripts/market.js
 */
 // Initial loading
 setTheme("day");
@@ -51,6 +56,9 @@ function setGameSettings() {
  * the play and settings menu options. This can be handled in many
  * different ways, but in our case, this will be done with a single
  * function that takes the name of each as its input.
+ * 
+ * The settings page should display as "grid" while the play page
+ * should display as "flex"
  * @param {boolean} visible If true, show the settings. If not, show the play
  * menu.
  */
@@ -322,6 +330,9 @@ function startTimer() {
     timer = setInterval(tick, 1000);
 }
 
+/**
+ * Ticks the timer GUI every second
+ */
 function tick() {
     let timerEl = document.getElementById("mkt-timer");
     let currTime = parseInt(timerEl.innerHTML);
