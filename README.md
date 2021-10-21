@@ -1,56 +1,42 @@
-# hackgt8-wd-ws
-Workshop code for HackGT 8, provided by GT WebDev.
+# Market Madness
+This is the codebase for HackGT8's Emerging Web Development workshop. Participants will learn ES6+ Javascript (JS) in which they will use to implement 5 key functions that make up the functionality of the project. If any participants were present for HackGTeeny 2021, this project is much different. Due to time constraints, HTML and CSS will be covered very lightly while Javascript will make up the majority of the workshop.
 
-## What will we be building?
-In the spirit of the marketplace, we will be building a lightweight video game using only HTML, CSS, and JS.
+All code is provided by myself as a representative of GT Web Developers (GT WebDev)
 
-## What will we use to build this?
-I'm providing two different builds for this website in this repository:
-- React
-- HTML/CSS/JS
+## What are we building?
+This is Market Madness, a simple browser game built with little to no external libraries. The entire functionality is handled with vanilla Javascript.
 
-However, for the workshop, I will not be demonstrating the React App so if you would like to, you can try out the React tutorial on your own.
+## File Structure
+`completed` - The completed version of the code
+`starter` - The starter version of the code (in which participants will be using)
 
-### File Structure
-- `react-version/*` - The React code for this project. May be empty, may not be. It is implemented using Typescript, a library of Javascript that contains explicit type declarations, much like languages like Java or C++.
+Inside of both are the following
+- `assets` - All images associated with this project. There should be only one: an image of a market stall I drew.
+- `scripts` - All JS files associated with this project. There are 3.
+  - `index.js` - The primary file in which participants will be working on. This file provides the core functionality of the game.
+  - `market.js` - Contains most of the constant data to populate the environment.
+  - `util.js` - Helper functions, classes (ES6+ addition), and other constants used to determine game settings.
 
-- `html-version/*` - The HTML/CSS/JS directory containing all of the code for this project that we will build. To run this site, load `index.html` in your browser of choice.
-
-### Files you will edit
-- `index.html`
-- `index.css`
+## Files you will edit
 - `scripts/index.js`
 
-### Files you should read for reference
-Some of this syntax may be confusing as these files contain utility functions I wrote.
-- `scripts/market.js`
+## Files included for good reference
 - `scripts/util.js`
 
-## Workshop Agenda
-- Introduction (5 min)
-    - Who am I?
-    - GT WebDev
-    - What am I going to cover
-- Workshop (45 min)
-    - HTML
-        - Lecture (5 min)
-        - Build (10 min)
-    - CSS
-        - Lecture (5 min)
-        - Build (10 min)
-    - JS
-        - Lecture (5 min)
-        - Build (10 min)
-- Closing (10 min)
-    - Wrap-up
-    - Any questions?
-    - Conclusion
+## Agenda
+- HTML
+  - Slides and examples
+- CSS
+  - Slides and examples
+- Javascript
+  - Slides and examples
+  - Live coding following the project's starter code
 
 ### Workshop Notes
-- Build = 2x Lecture
-- Expecting questions
+- Fast-paced, will talk and move quickly to fit the time period
+- Ask questions to mentors if there is lecture. Otherwise, please wait until the designated times.
 
 ## Closing
-If you have any questions at all, don't be afraid to ask! HackGT is a great time to learn new skills, but also have fun!
+If you have any questions at all, don't be afraid to ask! HackGT is a great time to learn new skills, but also to have fun!
 
 \- Talia
